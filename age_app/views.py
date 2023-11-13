@@ -11,7 +11,7 @@ from keras.preprocessing.image import load_img
 from keras.models import Sequential, Model
 from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D, Input
 from zipfile import ZipFile
-
+import random
 
 def extract_features(images):
     features = []
@@ -42,11 +42,12 @@ def AgePredictionView(request):
             with ZipFile(zip_file_path, 'r') as zip:
                 zip.extractall(extraction_directory)
             utk_face_directory = os.path.join(extraction_directory, 'utk-face')
+            random_image_paths = random.sample(os.listdir(utk_face_directory), 1000)
             image_paths = []
             age_labels = []
             gender_labels = []
 
-            for filename in os.listdir(utk_face_directory):
+            for filename in random_image_paths:
                 image_path = os.path.join(utk_face_directory, filename)
                 temp = filename.split('_')
                 age = int(temp[0])
