@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', include('age_app.urls')),
+    path('AgePredictionView/', include('age_app.urls')),
 ]
 
 if settings.DEBUG:
