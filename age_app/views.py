@@ -11,7 +11,7 @@ from keras.preprocessing.image import load_img
 from keras.models import Sequential, Model
 from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D, Input
 from zipfile import ZipFile
-from PIL import Image
+
 
 def extract_features(images):
     features = []
@@ -68,10 +68,7 @@ def AgePredictionView(request):
             maxp_1 = MaxPooling2D(pool_size=(2,2)) (conv_1)
             conv_2 = Conv2D(64, kernel_size=(3,3), activation = 'relu') (maxp_1)
             maxp_2 = MaxPooling2D(pool_size=(2,2)) (conv_2)
-            '''conv_3 = Conv2D(128, kernel_size=(3,3), activation = 'relu') (maxp_2)
-            maxp_3 = MaxPooling2D(pool_size=(2,2)) (conv_3)
-            conv_4 = Conv2D(256, kernel_size=(3,3), activation = 'relu') (maxp_3)
-            maxp_4 = MaxPooling2D(pool_size=(2,2)) (conv_4)'''
+
 
             flatten = Flatten() (maxp_2)
 
