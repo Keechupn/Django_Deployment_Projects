@@ -11,7 +11,7 @@ from keras.preprocessing.image import load_img
 from keras.models import Sequential, Model
 from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D, Input
 from zipfile import ZipFile
-from PIL import Image
+
 
 def extract_features(images):
     features = []
