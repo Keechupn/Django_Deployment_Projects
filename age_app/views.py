@@ -88,7 +88,7 @@ def AgePredictionView(request):
             model = Model(inputs=[inputs], outputs=[output_1, output_2])
             model.compile(loss=['binary_crossentropy', 'mse'], optimizer='adam', metrics=['accuracy'])
 
-            model.fit(x=X, y=[y_gender, y_age], batch_size = 32, epochs = 30, validation_split = 0.1)
+            model.fit(x=X, y=[y_gender, y_age], batch_size = 16, epochs = 30, validation_split = 0.1)
 
 
             # Process the uploaded image
